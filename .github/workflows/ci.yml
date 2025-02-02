@@ -5,10 +5,10 @@ on:
     branches:
       - master
     paths:
-      - "project/src/**"
-      - "project/index.html"
-      - "project/package.json"
-      - "project/vite.config.ts"
+      - "src/**"
+      - "index.html"
+      - "package.json"
+      - "vite.config.ts"
 
 jobs:
   deploy:
@@ -39,7 +39,7 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_REGION: "us-east-1"
         run: |
-          aws s3 sync project/dist/ s3://my-react-app-bucket --delete
+          aws s3 sync dist/ s3://my-todo-python-app-bucket --delete
 
       - name: Invalidate CloudFront Cache
         run: |
