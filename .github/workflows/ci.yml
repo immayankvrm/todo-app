@@ -25,12 +25,10 @@ jobs:
 
       - name: Install Dependencies
         run: |
-          cd project
           npm install
 
       - name: Build Project
         run: |
-          cd project
           npm run build
 
       - name: Deploy to S3
